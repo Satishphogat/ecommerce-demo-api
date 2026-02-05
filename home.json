@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "data": {
+    "banners": [
+      {
+        "id": 1,
+        "imageUrl": "https://picsum.photos/400/200?1",
+        "title": "Big Sale",
+        "subtitle": "Up to 50% off"
+      },
+      {
+        "id": 2,
+        "imageUrl": "https://picsum.photos/400/200?2",
+        "title": "New Arrivals",
+        "subtitle": "Latest fashion trends"
+      }
+    ],
+
+    "categories": [
+      {
+        "id": 1,
+        "name": "Electronics",
+        "iconUrl": "https://picsum.photos/100?electronics"
+      },
+      {
+        "id": 2,
+        "name": "Fashion",
+        "iconUrl": "https://picsum.photos/100?fashion"
+      },
+      {
+        "id": 3,
+        "name": "Home",
+        "iconUrl": "https://picsum.photos/100?home"
+      },
+      {
+        "id": 4,
+        "name": "Beauty",
+        "iconUrl": "https://picsum.photos/100?beauty"
+      }
+    ],
+
+    "featuredProducts": [
+      {
+        "id": 101,
+        "name": "iPhone 15",
+        "price": 79999,
+        "originalPrice": 89999,
+        "imageUrl": "https://picsum.photos/200?iphone",
+        "rating": 4.8
+      },
+      {
+        "id": 102,
+        "name": "Nike Shoes",
+        "price": 5999,
+        "originalPrice": 7999,
+        "imageUrl": "https://picsum.photos/200?shoes",
+        "rating": 4.5
+      }
+    ],
+
+    "bestSellers": [
+      {
+        "id": 201,
+        "name": "Bluetooth Headphones",
+        "price": 2999,
+        "imageUrl": "https://picsum.photos/200?headphones",
+        "rating": 4.6
+      },
+      {
+        "id": 202,
+        "name": "Smart Watch",
+        "price": 4999,
+        "imageUrl": "https://picsum.photos/200?watch",
+        "rating": 4.4
+      }
+    ]
+  }
+}
