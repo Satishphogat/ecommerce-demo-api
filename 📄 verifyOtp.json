@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "token": "demo_token_987654",
+  "user": {
+    "id": 1,
+    "name": "Demo User",
+    "mobile": "9999999999"
+  }
+}
