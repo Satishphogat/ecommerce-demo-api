@@ -23,22 +23,22 @@
           {
             "id": 1,
             "name": "Electronics",
-            "iconUrl": "https://picsum.photos/100?electronics"
+            "imageUrl": "https://picsum.photos/100?electronics"
           },
           {
             "id": 2,
             "name": "Fashion",
-            "iconUrl": "https://picsum.photos/100?fashion"
+            "imageUrl": "https://picsum.photos/100?fashion"
           },
           {
             "id": 3,
             "name": "Home",
-            "iconUrl": "https://picsum.photos/100?home"
+            "imageUrl": "https://picsum.photos/100?home"
           },
           {
             "id": 4,
             "name": "Beauty",
-            "iconUrl": "https://picsum.photos/100?beauty"
+            "imageUrl": "https://picsum.photos/100?beauty"
           }
         ]
       },
