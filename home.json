@@ -4,13 +4,15 @@
     "banners": [
       {
         "id": 1,
-        "imageUrl": "https://picsum.photos/400/200?1",
+        "itemId": "ITEM_FASHION_CAMPAIGN",
+        "imageUrl": "https://picsum.photos/id/1015/400/200",
         "title": "Big Sale",
         "subtitle": "Up to 50% off"
       },
       {
         "id": 2,
-        "imageUrl": "https://picsum.photos/400/200?2",
+        "itemId": "ITEM_ELECTRONICS_NEW",
+        "imageUrl": "https://picsum.photos/id/1025/400/200",
         "title": "New Arrivals",
         "subtitle": "Latest fashion trends"
       }
@@ -22,62 +24,72 @@
         "items": [
           {
             "id": 1,
+            "itemId": "ITEM_CAT_ELECTRONICS",
             "name": "Electronics",
-            "imageUrl": "https://picsum.photos/100?electronics"
+            "imageUrl": "https://picsum.photos/id/180/100/100"
           },
           {
             "id": 2,
+            "itemId": "ITEM_CAT_FASHION",
             "name": "Fashion",
-            "imageUrl": "https://picsum.photos/100?fashion"
+            "imageUrl": "https://picsum.photos/id/823/100/100"
           },
           {
             "id": 3,
+            "itemId": "ITEM_CAT_HOME",
             "name": "Home",
-            "imageUrl": "https://picsum.photos/100?home"
+            "imageUrl": "https://picsum.photos/id/1060/100/100"
           },
           {
             "id": 4,
+            "itemId": "ITEM_CAT_BEAUTY",
             "name": "Beauty",
-            "imageUrl": "https://picsum.photos/100?beauty"
+            "imageUrl": "https://picsum.photos/id/64/100/100"
           }
         ]
       },
+
       {
         "title": "Featured Products",
         "items": [
           {
             "id": 101,
+            "itemId": "ITEM_IPHONE_15",
             "name": "iPhone 15",
             "price": 79999,
             "originalPrice": 89999,
-            "imageUrl": "https://picsum.photos/200?iphone",
+            "imageUrl": "https://picsum.photos/id/1062/200/200",
             "rating": 4.8
           },
           {
             "id": 102,
+            "itemId": "ITEM_NIKE_SHOES",
             "name": "Nike Shoes",
             "price": 5999,
             "originalPrice": 7999,
-            "imageUrl": "https://picsum.photos/200?shoes",
+            "imageUrl": "https://picsum.photos/id/21/200/200",
             "rating": 4.5
           }
         ]
       },
+
       {
         "title": "Best Seller",
         "items": [
           {
             "id": 201,
+            "itemId": "ITEM_BT_HEADPHONES",
             "name": "Bluetooth Headphones",
             "price": 2999,
-            "imageUrl": "https://picsum.photos/200?headphones",
+            "imageUrl": "https://picsum.photos/id/1080/200/200",
             "rating": 4.6
           },
           {
             "id": 202,
+            "itemId": "ITEM_SMART_WATCH",
             "name": "Smart Watch",
             "price": 4999,
-            "imageUrl": "https://picsum.photos/200?watch",
+            "imageUrl": "https://picsum.photos/id/903/200/200",
             "rating": 4.4
           }
         ]
