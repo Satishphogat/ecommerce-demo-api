@@ -1,0 +1,167 @@
+//
+//  LoginScreen.swift
+//  EcommerceApp
+//
+//  Created by Satish Phogat on 24/01/26.
+//
+//https://raw.githubusercontent.com/Satishphogat/ecommerce-demo-api/refs/heads/main/login.json
+// https://raw.githubusercontent.com/Satishphogat/ecommerce-demo-api/refs/heads/main/verifyOtp.json
+
+import SwiftUI
+
+struct LoginScreen: View {
+    @State var mobileNumber: String = ""
+    @State var otp: String = ""
+    @State var errorMessage: String = ""
+    @State var showAlert: Bool = false
+    
+    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var router: Router
+    
+    var body: some View {
+            ZStack(alignment: .top) {
+                
+                Color.white
+                    .ignoresSafeArea()
+                
+                if viewModel.isLoading {
+                    ProgressView("Loading")
+                } else if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .font(.headline)
+                        .padding()
+                } else {
+                    GeometryReader { geo in
+                        Rectangle()
+                            .fill(Color.lightGreen)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: geo.size.height * 0.5)
+                            .scaleEffect(x: 1.3, y: 1)
+                            .rotationEffect(.degrees(-7))
+                            .offset(y: -150)
+                            .ignoresSafeArea(edges: .top)
+                        
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Login")
+                                .padding(.horizontal)
+                                .padding(.top, 40)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                            
+                            Text("Log in into your account")
+                                .padding(.horizontal)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Spacer()
+                                                        
+                            TextFieldView(text: "Mobile number:",
+                                          value: $mobileNumber,
+                                          maxLength: 10)
+                            
+                            if viewModel.showOtp {
+                                TextFieldView(text: "Otp:",
+                                              value: $otp,
+                                              maxLength: 4)
+                            }
+                            
+                            ButtonView {
+                                Task {
+                                    await validate()
+                                }
+                            }
+                            .alert(isPresented: $showAlert) {
+                                Alert(title: Text(errorMessage),
+                                      message: nil,
+                                      dismissButton: .default(Text("OK")))
+                            }
+                            .padding(.bottom, 40)
+                        }
+                        .padding()
+                    }
+                }
+            }
+            .onChange(of: viewModel.isLoggedIn, { _, isLoggnedIn in
+                if isLoggnedIn {
+                    router.push(.homeScreen)
+                }
+            })
+    }
+    
+    private func validate() async {
+        if mobileNumber.isEmpty || mobileNumber.count < 10 {
+            errorMessage = "Please enter a valid mobile number."
+            showAlert = true
+        } else if viewModel.showOtp && (otp.isEmpty || otp.count < 4) {
+            errorMessage = "Please enter a valid otp."
+            showAlert = true
+        } else {
+            showAlert = false
+            await callApi()
+        }
+    }
+    
+    private func callApi() async {
+        if viewModel.showOtp {
+            await viewModel.verifyOtp(mobileNumber: mobileNumber,
+                                      otp: otp)
+        } else {
+            await viewModel.login(mobileNumber: mobileNumber)
+        }
+    }
+}
+
+struct TextFieldView: View {
+    @State var text: String = ""
+    @Binding var value: String
+    var maxLength: Int
+    
+    var body: some View {
+        VStack {
+            Text(text)
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            TextField("", text: $value)
+                .padding()
+                .background(Color.lightGreen)
+                .cornerRadius(8)
+                .padding(.horizontal)
+                .padding(.bottom, 20)
+                .textFieldStyle(.plain)
+                .onChange(of: value) { oldValue, newValue in
+                    if newValue.count > maxLength {
+                        value = String(newValue.prefix(maxLength))
+                    } else {
+                        value = newValue
+                    }
+                }
+        }
+    }
+}
+
+struct ButtonView: View {
+    var callBack: (() -> Void)?
+    var body: some View {
+
+        Button(action: {
+            callBack?()
+        }) {
+            Text("Login")
+                .foregroundColor(.white)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.darkGreen)
+                .cornerRadius(8)
+                .padding(.horizontal)
+        }
+        .padding(.vertical, 20)
+    }
+}
+
+#Preview {
+    LoginScreen()
+        .environmentObject(AuthViewModel())
+        .environmentObject(Router())
+}
