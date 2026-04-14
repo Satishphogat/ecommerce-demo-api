@@ -4,118 +4,93 @@
     "banners": [
       {
         "id": 1,
-        "itemId": "ITEM_ELECTRONICS_2025",
-        "imageUrl": "https://picsum.photos",
-        "title": "Next-Gen Tech",
-        "subtitle": "Discover the 2025 Flagships"
+        "itemId": "ITEM_FASHION_CAMPAIGN",
+        "imageUrl": "https://picsum.photos/id/1015/400/200",
+        "title": "Big Sale",
+        "subtitle": "Up to 50% off"
       },
       {
         "id": 2,
-        "itemId": "ITEM_SMART_HOME_SALE",
-        "imageUrl": "https://picsum.photos",
-        "title": "Smart Living",
-        "subtitle": "Up to 30% off Home Automation"
+        "itemId": "ITEM_ELECTRONICS_NEW",
+        "imageUrl": "https://picsum.photos/id/1025/400/200",
+        "title": "New Arrivals",
+        "subtitle": "Latest fashion trends"
       }
     ],
+
     "products": [
       {
-        "title": "Electronics Categories",
+        "title": "Categories",
         "items": [
           {
             "id": 1,
-            "itemId": "ITEM_CAT_SMARTPHONES",
-            "name": "Smartphones",
-            "price": 11999,
-            "imageUrl": "https://picsum.photos"
+            "itemId": "ITEM_CAT_ELECTRONICS",
+            "name": "Electronics",
+            "imageUrl": "https://picsum.photos/id/180/100/100"
           },
           {
             "id": 2,
-            "itemId": "ITEM_CAT_LAPTOPS",
-            "name": "Laptops & Tablets",
-            "price": 26999,
-            "imageUrl": "https://picsum.photos"
+            "itemId": "ITEM_CAT_FASHION",
+            "name": "Fashion",
+            "imageUrl": "https://picsum.photos/id/823/100/100"
           },
           {
             "id": 3,
-            "itemId": "ITEM_CAT_AUDIO",
-            "name": "Audio & Speakers",
-            "price": 999,
-            "imageUrl": "https://picsum.photos"
+            "itemId": "ITEM_CAT_HOME",
+            "name": "Home",
+            "imageUrl": "https://picsum.photos/id/1060/100/100"
           },
           {
             "id": 4,
-            "itemId": "ITEM_CAT_WEARABLES",
-            "name": "Wearable Tech",
-            "price": 1599,
-            "imageUrl": "https://picsum.photos"
+            "itemId": "ITEM_CAT_BEAUTY",
+            "name": "Beauty",
+            "imageUrl": "https://picsum.photos/id/64/100/100"
           }
         ]
       },
+
       {
-        "title": "Featured Electronics",
+        "title": "Featured Products",
         "items": [
           {
             "id": 101,
-            "itemId": "ITEM_IPHONE_17_PM",
-            "name": "iPhone 17 Pro Max",
-            "price": 149900,
-            "originalPrice": 159900,
-            "imageUrl": "https://picsum.photos",
-            "rating": 4.9
-          },
-          {
-            "id": 102,
-            "itemId": "ITEM_MACBOOK_AIR_M4",
-            "name": "MacBook Air M4 (2025)",
-            "price": 132900,
-            "imageUrl": "https://picsum.photos",
+            "itemId": "ITEM_IPHONE_15",
+            "name": "iPhone 15",
+            "price": 79999,
+            "originalPrice": 89999,
+            "imageUrl": "https://picsum.photos/id/1062/200/200",
             "rating": 4.8
           },
           {
-            "id": 103,
-            "itemId": "ITEM_SAMSUNG_S25",
-            "name": "Samsung Galaxy S25 Ultra",
-            "price": 124999,
-            "originalPrice": 134999,
-            "imageUrl": "https://picsum.photos",
-            "rating": 4.7
+            "id": 102,
+            "itemId": "ITEM_NIKE_SHOES",
+            "name": "Nike Shoes",
+            "price": 5999,
+            "originalPrice": 7999,
+            "imageUrl": "https://picsum.photos/id/21/200/200",
+            "rating": 4.5
           }
         ]
       },
+
       {
-        "title": "Best Sellers & Gadgets",
+        "title": "Best Seller",
         "items": [
           {
             "id": 201,
-            "itemId": "ITEM_ECHO_DOT_5",
-            "name": "Amazon Echo Dot (5th Gen)",
-            "price": 5499,
-            "imageUrl": "https://picsum.photos",
+            "itemId": "ITEM_BT_HEADPHONES",
+            "name": "Bluetooth Headphones",
+            "price": 2999,
+            "imageUrl": "https://picsum.photos/id/1080/200/200",
             "rating": 4.6
           },
           {
             "id": 202,
-            "itemId": "ITEM_NOISE_WATCH",
-            "name": "Noise Twist Smart Watch",
-            "price": 1599,
-            "imageUrl": "https://picsum.photos",
+            "itemId": "ITEM_SMART_WATCH",
+            "name": "Smart Watch",
+            "price": 4999,
+            "imageUrl": "https://picsum.photos/id/903/200/200",
             "rating": 4.4
-          },
-          {
-            "id": 203,
-            "itemId": "ITEM_ONEPLUS_BUDS_3R",
-            "name": "OnePlus Nord Buds 3r",
-            "price": 1599,
-            "imageUrl": "https://picsum.photos",
-            "rating": 4.5
-          },
-          {
-            "id": 204,
-            "itemId": "ITEM_REDMI_PAD_2",
-            "name": "Redmi Pad 2 Pro 5G",
-            "price": 22999,
-            "imageUrl": "https://picsum.photos",
-            "rating": 4.3
           }
         ]
       }
