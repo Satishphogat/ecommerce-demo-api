@@ -5,14 +5,14 @@
       {
         "id": 1,
         "itemId": "ITEM_ELECTRONICS_SALE",
-        "imageUrl": "https://source.unsplash.com/400x200/?electronics",
+        "imageUrl": ""https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80"",
         "title": "Mega Electronics Sale",
         "subtitle": "Up to 60% off on gadgets"
       },
       {
         "id": 2,
         "itemId": "ITEM_ELECTRONICS_NEW",
-        "imageUrl": "https://source.unsplash.com/400x200/?latest,technology",
+        "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80",
         "title": "Latest Gadgets",
         "subtitle": "Upgrade your tech today"
       }
@@ -26,24 +26,28 @@
             "id": 1,
             "itemId": "ITEM_CAT_MOBILES",
             "name": "Mobiles",
+            "price": 79999,
             "imageUrl": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=200&q=80"
           },
           {
             "id": 2,
             "itemId": "ITEM_CAT_LAPTOPS",
             "name": "Laptops",
+            "price": 89999,
             "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=200&q=80"
           },
           {
             "id": 3,
             "itemId": "ITEM_CAT_AUDIO",
             "name": "Audio",
+            "price": 19999,
             "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&q=80"
           },
           {
             "id": 4,
             "itemId": "ITEM_CAT_WEARABLES",
             "name": "Wearables",
+            "price": 29999,
             "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=200&q=80"
           }
         ]
