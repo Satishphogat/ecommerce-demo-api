@@ -1,0 +1,24 @@
+//
+//  MainTabView.swift
+//  EcommerceApp
+//
+//  Created by Satish Phogat on 28/01/26.
+//
+
+import SwiftUI
+
+struct MainTabView: View {
+    var body: some View {
+        TabView {
+            HomeScreen()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+        }
+    }
+}
+
+#Preview {
+    MainTabView()
+}
