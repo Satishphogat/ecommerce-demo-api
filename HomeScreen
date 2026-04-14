@@ -1,0 +1,154 @@
+//
+//  HomeScreen.swift
+//  EcommerceApp
+//
+//  Created by Satish Phogat on 26/01/26.
+//
+
+import SwiftUI
+
+struct HomeScreen: View {
+    
+    @StateObject private var viewModel = HomeViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
+    var body: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading) {
+                if let banners = viewModel.viewModel?.homeData?.banners {
+                    HorizontalCardView(banners: banners)
+                }
+                if let products = viewModel.viewModel?.homeData?.products {
+                    VerticalCardView(productList: products)
+                }
+                Spacer()
+            }
+            .padding(.horizontal, 20)
+        }
+        .navigationTitle("Home")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+    }
+}
+
+struct HorizontalCardView: View {
+    
+    var banners: [Banner]
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(alignment: .top, spacing: 8) {
+                ForEach(banners) { banner in // for loop
+                    BannerImage(banner: banner)
+                        .frame(width: 200, height: 150)
+                        .clipped()
+                        .cornerRadius(8)
+                }
+            }
+        }
+    }
+}
+
+struct BannerImage: View {
+    var banner: Banner
+    
+    var body: some View {
+        ZStack {
+            if let imageUrl = banner.imageUrl {
+                CustomImage(imageUrl: imageUrl)
+            }
+            VStack {
+                Text(banner.title ?? "")
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white)
+                Text(banner.subtitle ?? "")
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white)
+            }
+        }
+    }
+}
+
+struct VerticalCardView: View {
+    
+    var productList: [ProductDetail]
+    @EnvironmentObject var router: Router
+    
+    let columns = [
+        GridItem(.flexible(), spacing: 16),
+        GridItem(.flexible(), spacing: 16)
+    ]
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            
+            ForEach(productList.indices, id: \.self) { list in
+                let product = productList[list]
+                
+                Text(product.title ?? "")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 8)
+                
+                if let items = product.items {
+                    LazyVGrid(columns: columns) {
+                        ForEach(items.indices, id: \.self) { index in
+                            let item = items[index]
+                            
+                            Button {
+                                router.push(.productDetail(item)) //next screen
+                            } label: {
+                                CardDetailView(item: item)
+                                    .shadow(radius: 5)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+struct CardDetailView: View {
+    var item: Item
+    var body: some View {
+        VStack {
+            CustomImage(imageUrl: item.imageUrl ?? "")
+                .frame(width: 150, height: 150)
+            Text(item.name ?? "")
+                .foregroundStyle(.black)
+                .fontWeight(.medium)
+            if let price = item.price {
+                Text(String(format: "$%.2f", price))
+                    .foregroundStyle(.black)
+                    .fontWeight(.medium)
+            }
+        }
+        .padding(8)
+        .background(Color.white)
+        .cornerRadius(5)
+    }
+}
+
+struct CustomImage: View {
+    var imageUrl: String
+    
+    var body: some View {
+        AsyncImage(url: URL(string: imageUrl)) { image in
+            image
+                .resizable()
+                .scaledToFill()
+        } placeholder: {
+            ProgressView()
+        }
+        .cornerRadius(12)
+        .clipped()
+    }
+}
+
+
+#Preview {
+    NavigationStack {
+        HomeScreen()
+    }
+}
