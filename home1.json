@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "data": {
+    "banners": [
+      {
+        "id": 2,
+        "itemId": "ITEM_ELECTRONICS_NEW",
+        "imageUrl": "https://picsum.photos/id/1025/400/200",
+        "title": "New Arrivals",
+        "subtitle": "Latest Gadgets"
+      }
+    ],
+    "products": [
+      {
+        "title": "Categories",
+        "items": [
+          {
+            "id": 1,
+            "itemId": "ITEM_CAT_ELECTRONICS",
+            "name": "Electronics",
+            "price": 0, 
+            "imageUrl": "https://picsum.photos/id/180/100/100"
+          }
+        ]
+      },
+      {
+        "title": "Featured Electronics",
+        "items": [
+          {
+            "id": 101,
+            "itemId": "ITEM_IPHONE_15",
+            "name": "iPhone 15",
+            "price": 79999,
+            "originalPrice": 89999,
+            "imageUrl": "https://picsum.photos/id/1062/200/200",
+            "rating": 4.8
+          }
+        ]
+      },
+      {
+        "title": "Best Seller",
+        "items": [
+          {
+            "id": 201,
+            "itemId": "ITEM_BT_HEADPHONES",
+            "name": "Bluetooth Headphones",
+            "price": 2999,
+            "imageUrl": "https://picsum.photos/id/1080/200/200",
+            "rating": 4.6
+          },
+          {
+            "id": 202,
+            "itemId": "ITEM_SMART_WATCH",
+            "name": "Smart Watch",
+            "price": 4999,
+            "imageUrl": "https://picsum.photos/id/903/200/200",
+            "rating": 4.4
+          }
+        ]
+      }
+    ]
+  }
+}
