@@ -26,7 +26,7 @@
             "id": 1,
             "itemId": "ITEM_CAT_MOBILES",
             "name": "Mobiles",
-            "imageUrl": "https://source.unsplash.com/100x100/?smartphone"
+            "imageUrl": ""https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=200&q=80""
           },
           {
             "id": 2,
@@ -38,7 +38,7 @@
             "id": 3,
             "itemId": "ITEM_CAT_AUDIO",
             "name": "Audio",
-            "imageUrl": "https://source.unsplash.com/100x100/?headphones"
+            "imageUrl": "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?w=200&q=80"
           },
           {
             "id": 4,
@@ -81,7 +81,7 @@
             "itemId": "ITEM_BT_HEADPHONES",
             "name": "Bluetooth Headphones",
             "price": 2999,
-            "imageUrl": "https://source.unsplash.com/200x200/?bluetooth,headphones",
+            "imageUrl": "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?w=200&q=80",
             "rating": 4.6
           },
           {
