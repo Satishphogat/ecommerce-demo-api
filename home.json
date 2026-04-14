@@ -5,14 +5,14 @@
       {
         "id": 1,
         "itemId": "ITEM_ELECTRONICS_SALE",
-        "imageUrl": "https://picsum.photos/id/180/400/200",
+        "imageUrl": "https://source.unsplash.com/400x200/?electronics,gadgets",
         "title": "Mega Electronics Sale",
         "subtitle": "Up to 60% off on gadgets"
       },
       {
         "id": 2,
         "itemId": "ITEM_ELECTRONICS_NEW",
-        "imageUrl": "https://picsum.photos/id/250/400/200",
+        "imageUrl": "https://source.unsplash.com/400x200/?latest,technology",
         "title": "Latest Gadgets",
         "subtitle": "Upgrade your tech today"
       }
@@ -26,25 +26,25 @@
             "id": 1,
             "itemId": "ITEM_CAT_MOBILES",
             "name": "Mobiles",
-            "imageUrl": "https://picsum.photos/id/0/100/100"
+            "imageUrl": "https://source.unsplash.com/100x100/?smartphone"
           },
           {
             "id": 2,
             "itemId": "ITEM_CAT_LAPTOPS",
             "name": "Laptops",
-            "imageUrl": "https://picsum.photos/id/180/100/100"
+            "imageUrl": "https://source.unsplash.com/100x100/?laptop"
           },
           {
             "id": 3,
             "itemId": "ITEM_CAT_AUDIO",
             "name": "Audio",
-            "imageUrl": "https://picsum.photos/id/1080/100/100"
+            "imageUrl": "https://source.unsplash.com/100x100/?headphones"
           },
           {
             "id": 4,
             "itemId": "ITEM_CAT_WEARABLES",
             "name": "Wearables",
-            "imageUrl": "https://picsum.photos/id/903/100/100"
+            "imageUrl": "https://source.unsplash.com/100x100/?smartwatch"
           }
         ]
       },
@@ -58,7 +58,7 @@
             "name": "iPhone 15",
             "price": 79999,
             "originalPrice": 89999,
-            "imageUrl": "https://picsum.photos/id/0/200/200",
+            "imageUrl": "https://source.unsplash.com/200x200/?iphone",
             "rating": 4.8
           },
           {
@@ -67,7 +67,7 @@
             "name": "MacBook Air M2",
             "price": 99999,
             "originalPrice": 109999,
-            "imageUrl": "https://picsum.photos/id/180/200/200",
+            "imageUrl": "https://source.unsplash.com/200x200/?macbook,laptop",
             "rating": 4.7
           }
         ]
@@ -81,7 +81,7 @@
             "itemId": "ITEM_BT_HEADPHONES",
             "name": "Bluetooth Headphones",
             "price": 2999,
-            "imageUrl": "https://picsum.photos/id/1080/200/200",
+            "imageUrl": "https://source.unsplash.com/200x200/?bluetooth,headphones",
             "rating": 4.6
           },
           {
@@ -89,7 +89,7 @@
             "itemId": "ITEM_SMART_WATCH",
             "name": "Smart Watch",
             "price": 4999,
-            "imageUrl": "https://picsum.photos/id/903/200/200",
+            "imageUrl": "https://source.unsplash.com/200x200/?smartwatch",
             "rating": 4.4
           },
           {
@@ -97,7 +97,7 @@
             "itemId": "ITEM_TABLET",
             "name": "Android Tablet",
             "price": 15999,
-            "imageUrl": "https://picsum.photos/id/1060/200/200",
+            "imageUrl": "https://source.unsplash.com/200x200/?tablet",
             "rating": 4.3
           }
         ]
