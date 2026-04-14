@@ -1,0 +1,185 @@
+//
+//  ProductDetailScreen.swift
+//  EcommerceApp
+//
+//  Created by Satish Phogat on 01/02/26.
+//
+
+import SwiftUI
+
+struct ProductDetailScreen: View {
+    @State var item: Item
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var cart: CartModel
+    
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading) {
+                if let imageUrl = item.imageUrl {
+                    CustomImage(imageUrl: imageUrl)
+                        .frame(maxWidth: UIScreen.main.bounds.width - 40)
+                        .frame(height: 300)
+                        .clipped()
+                }
+                
+                HStack {
+                    Text(item.name ?? "")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    Spacer()
+                    if let price = item.price {
+                        Text(String(format: "$%.2f", price))
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }
+                    
+                }
+                .padding(.top, 10)
+                
+                Text("Premium wireless headphone with noice cancelation, long battery life and superior sound quality")
+                    .foregroundStyle(.gray)
+                    .padding(.top, 10)
+                
+                VStack {
+                    HStack{
+                        Text("Color")
+                        
+                        Circle().frame(width: 24, height: 24)
+                            .foregroundStyle(.black)
+                        
+                        Spacer()
+                        
+                        Image("right_arrow")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .background(.white)
+                        
+                    }
+                    .padding()
+                    
+                    Divider()
+                    
+                    HStack{
+                        Text("Quantity")
+                        
+                        Spacer()
+                        
+//                        if let index = cart.items.firstIndex(where: {$0.id == item.id}) {
+//                            Steaper(item: $cart.items[index])
+//                        } else {
+                            Steaper(item: $item)
+//                        }
+                        
+                        
+                        
+                    }
+                    .padding()
+                    
+                }
+                .background(Color.white)
+                .cornerRadius(5)
+                .shadow(radius: 1)
+                .padding(.top, 20)
+                
+                HStack {
+                        CustomButton(title: "Add to Cart") {
+                            addToCart()
+                            router.push(.addToCart)
+                        }
+                        
+
+                    
+                        CustomButton(title: "Buy now") {
+                            addToCart()
+                            router.push(.checkout)
+                        }
+                }
+                .padding(.top, 40)
+                .disabled(item.count ?? 0 <= 0)
+                .opacity(item.count ?? 0 <= 0 ? 0.5 : 1)
+                
+                
+                Spacer()
+            }
+            .padding(.horizontal, 20)
+        }
+        .navigationTitle(item.name ?? "")
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            if let index = cart.items.firstIndex(where: {$0.id == item.id}) {
+                item = cart.items[index]
+            }
+        }
+    }
+    
+    func updateItemObject() {
+        if let index = cart.items.firstIndex(where: {$0.id == item.id}) {
+            item = cart.items[index]
+        } else {
+            item = self.item
+        }
+    }
+    
+    func showCart() {
+        
+    }
+    
+    func addToCart() {
+        if let index = cart.items.firstIndex(where: { $0.id == item.id}) {
+            cart.items[index].count = (item.count ?? 0)
+        } else {
+            cart.items.append(item)
+        }
+    }
+}
+
+struct Steaper: View {
+    @Binding var item: Item
+    var body: some View {
+        HStack {
+            Button {
+                item.count = (item.count ?? 0) - 1
+            } label: {
+                Text("-")
+            }
+            .padding(.horizontal, 12)
+            
+            Text("\(item.count ?? 0)")
+                .padding(.horizontal, 8)
+            
+            Button {
+                item.count = (item.count ?? 0) + 1
+            } label: {
+                Text("+")
+            }
+            .padding(.horizontal, 12)
+            
+        }
+        .padding(.vertical, 4)
+        .background(Color.white)
+        .cornerRadius(5)
+        .shadow(radius: 1)
+    }
+}
+
+struct CustomButton: View {
+    var title: String
+    var completionHandler: () -> ()
+    var body: some View {
+        Button {
+            completionHandler()
+        } label: {
+            Text(title)
+                .foregroundColor(.white)
+                .fontWeight(.bold) // Added for better look
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.darkGreen)
+                .cornerRadius(8)
+        }
+    }
+}
+
+//#Preview {
+//    ProductDetailScreen()
+//}
