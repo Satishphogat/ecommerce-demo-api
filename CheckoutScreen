@@ -1,0 +1,132 @@
+//
+//  CheckoutScreen.swift
+//  EcommerceApp
+//
+//  Created by Satish Phogat on 02/02/26.
+//
+
+import SwiftUI
+
+struct CheckoutScreen: View {
+    @State var isPresentingAlert = false
+    @EnvironmentObject var cart: CartModel
+    @EnvironmentObject var router: Router
+    
+    var body: some View {
+//        ScrollView {
+            VStack {
+                VStack {
+                    HStack() {
+                        Image("location_icon")
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(.blue)
+                        Text("Shipping Address")
+                            .font(.title3)
+                            .fontWeight(.medium)
+                        Spacer()
+                    }
+                    .padding(16)
+                    
+                    Text("""
+                         Indu Dalal
+                         123 main street
+                         Los Angleses, CA 90001
+                         """)
+                    .frame(maxWidth: .infinity,
+                           alignment: .leading)
+                    .multilineTextAlignment(.leading)
+                    .padding(.leading, 55)
+                    .foregroundStyle(.black)
+                }
+                
+                Divider()
+                
+                HStack {
+                    Image("cash-on-delivery")
+                        .scaledToFit()
+                        .foregroundStyle(.blue)
+                        .frame(width: 24, height: 24)
+                    Text("Cash on delivery")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .padding(4)
+                    
+                    Spacer()
+                }
+                .padding(16)
+
+            }
+            .padding(5)
+            .background(Color.white)
+            .cornerRadius(5)
+            .shadow(radius: 1)
+            .alert("Congrats", isPresented: $isPresentingAlert, actions: {
+                Button("OK", role: .cancel) {
+                    cart.items.removeAll()
+                    router.popToRoot()
+                }
+            }, message: {
+                Text("Your order has been placed successfully")
+            })
+        .padding()
+        
+        Divider()
+        
+        OrderAmount()
+        CustomButton(title: "Place Order") {
+            isPresentingAlert = true
+        }
+        
+            .padding()
+    }
+}
+
+struct OrderAmount: View {
+    @EnvironmentObject var cart: CartModel
+
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("Order Summary")
+                .font(.title2)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            HStack {
+                Text("SubTotal: ")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
+                Text(cart.subTotal().description)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            Divider()
+            HStack {
+                Text("Shipping: ")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
+                Text("Free")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .foregroundStyle(.green)
+            }
+            Divider()
+            HStack {
+                Text("Total: ")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
+                Text(cart.subTotal().description)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        Spacer()
+
+    }
+    
+}
+
+#Preview {
+    CheckoutScreen()
+}
