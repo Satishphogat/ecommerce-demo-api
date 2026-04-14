@@ -5,7 +5,7 @@
       {
         "id": 1,
         "itemId": "ITEM_ELECTRONICS_SALE",
-        "imageUrl": "https://source.unsplash.com/400x200/?electronics,gadgets",
+        "imageUrl": "https://source.unsplash.com/400x200/?electronics",
         "title": "Mega Electronics Sale",
         "subtitle": "Up to 60% off on gadgets"
       },
@@ -32,19 +32,19 @@
             "id": 2,
             "itemId": "ITEM_CAT_LAPTOPS",
             "name": "Laptops",
-            "imageUrl": "https://source.unsplash.com/100x100/?laptop"
+            "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=200&q=80"
           },
           {
             "id": 3,
             "itemId": "ITEM_CAT_AUDIO",
             "name": "Audio",
-            "imageUrl": "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?w=200&q=80"
+            "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&q=80"
           },
           {
             "id": 4,
             "itemId": "ITEM_CAT_WEARABLES",
             "name": "Wearables",
-            "imageUrl": "https://source.unsplash.com/100x100/?smartwatch"
+            "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=200&q=80"
           }
         ]
       },
@@ -67,7 +67,7 @@
             "name": "MacBook Air M2",
             "price": 99999,
             "originalPrice": 109999,
-            "imageUrl": "https://source.unsplash.com/200x200/?macbook,laptop",
+            "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=200&q=80",
             "rating": 4.7
           }
         ]
@@ -89,7 +89,7 @@
             "itemId": "ITEM_SMART_WATCH",
             "name": "Smart Watch",
             "price": 4999,
-            "imageUrl": "https://source.unsplash.com/200x200/?smartwatch",
+            "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=200&q=80",
             "rating": 4.4
           },
           {
@@ -97,7 +97,7 @@
             "itemId": "ITEM_TABLET",
             "name": "Android Tablet",
             "price": 15999,
-            "imageUrl": "https://source.unsplash.com/200x200/?tablet",
+            "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=200&q=80",
             "rating": 4.3
           }
         ]
